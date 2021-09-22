@@ -1,3 +1,4 @@
+// Menú hamburguesa
 const menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
 menuBtn.addEventListener('click', () => {
@@ -9,6 +10,9 @@ menuBtn.addEventListener('click', () => {
         menuOpen = false;
     }
 });
+
+
+// Animación para los inputs del registro
 
 let registroForm= document.getElementById("registro-form");
 let registroContainer= document.getElementById("registro-container");
@@ -28,8 +32,6 @@ let lcontra= document.getElementById("lcontra")
 let lcontra2= document.getElementById("lcontra2")
 
 
-
-
 registroNombre.addEventListener ("click", e=>{
     lnombre.classList.add('animacion-registro');
 });
@@ -39,7 +41,6 @@ registroNombre.addEventListener("blur", e=>{
         lnombre.classList.remove('animacion-registro');
     }   
 });
-
 
 registroApellido.addEventListener ("click", e=>{
     lapellido.classList.add('animacion-registro');
@@ -51,7 +52,6 @@ registroApellido.addEventListener("blur", e=>{
     }   
 });
 
-
 registroUsername.addEventListener ("click", e=>{
     lusername.classList.add('animacion-registro');
 });
@@ -61,7 +61,6 @@ registroUsername.addEventListener("blur", e=>{
         lusername.classList.remove('animacion-registro');
     }   
 });
-
 
 registroEmail.addEventListener ("click", e=>{
     lemail.classList.add('animacion-registro');
@@ -73,7 +72,6 @@ registroEmail.addEventListener("blur", e=>{
     }   
 });
 
-
 registroContra.addEventListener ("click", e=>{
     lcontra.classList.add('animacion-registro');
 });
@@ -83,7 +81,6 @@ registroContra.addEventListener("blur", e=>{
         lcontra.classList.remove('animacion-registro');
     }   
 });
-
 
 registroRepContra.addEventListener ("click", e=>{
     lcontra2.classList.add('animacion-registro');
@@ -96,8 +93,7 @@ registroRepContra.addEventListener("blur", e=>{
 });
 
 
-// Validación
-
+// Validación de los inputs
 
 function tienenumero (x) {
     return /\d/.test(x);
@@ -115,8 +111,8 @@ function validarMail(email) {
 
 const right= document.getElementsByClassName("right");
 const wrong= document.getElementsByClassName("wrong");
-let i = 0
 const texterror= document.querySelectorAll("small")
+let i = 0
 
 registroForm.addEventListener('submit', e=>{
     e.preventDefault();
@@ -140,7 +136,6 @@ function checkInputs() {
     if (nombre === ''){
         i=0;
         error(registroNombre, "Ingrese su nombre");
-        
     } else if (nombre.length < 3) {
         i=0;
         error(registroNombre, "El mínimo son 3 caracteres");
@@ -151,7 +146,6 @@ function checkInputs() {
         i=0;
         correcto(registroNombre, "");
         nombreC=true 
-
     }
 
     if (apellido === ''){
@@ -163,12 +157,10 @@ function checkInputs() {
     } else if (apellido.length >= 30){
         i=1;
         error(registroApellido, "El máximo son 30 caracteres");
-        
     } else {
         i=1;
         correcto(registroApellido, "");
         apellidoC=true
-        
     }
 
     if (username === ''){
@@ -177,10 +169,10 @@ function checkInputs() {
     } else if (username.length <5){
         i=2;
         error(registroUsername, "Su username debe tener al menos 5 caracteres ");
-    }    else if (username.length >= 30){
+    } else if (username.length >= 30){
         i=2;
         error(registroUsername, "El máximo son 30 caracteres");
-    }  else if (tienenumero(username) == false ) {
+    } else if (tienenumero(username) == false ) {
         i=2;
         error(registroUsername, "Su username debe contener un número");  
     } else if (tienemayuscula(username) == false) {
@@ -195,8 +187,7 @@ function checkInputs() {
     if (mail === ''){
         i=3;        
         error(registroEmail, "Ingrese su correo electrónico");
-        
-    }   else if (validarMail(mail)==false){
+    } else if (validarMail(mail)==false){
         i=3;
         error(registroEmail, "Ingrese un correo electrónico válido");
         
@@ -204,13 +195,11 @@ function checkInputs() {
         i=3;
         correcto(registroEmail, "");
         mailC=true;
-
     }
 
     if (contra === ''){
         i=4;
         error(registroContra, "Ingrese una contraseña");
-        
     } else if (contra.length < 7){
         i=4;
         error(registroContra, "Su contraseña no puede tener menos de 7 caracteres");  
@@ -221,7 +210,7 @@ function checkInputs() {
     } else if (tienenumero(contra) == false ) {
         i=4;
         error(registroContra, "Su contraseña debe contener al menos un número")
-    }  else if (tienemayuscula(contra) == false ) {
+    } else if (tienemayuscula(contra) == false ) {
         i=4;
         error(registroContra, "Su contraseña debe contener al menos una mayúscula")
     } else {
@@ -233,24 +222,21 @@ function checkInputs() {
     if (contra ==="") {
         i=5;
         error(registroRepContra, "Debe llenar el campo anterior primero");
-        
-        
-    }  else if (contra2 === ''){
+    } else if (contra2 === ''){
         i=5;
         error(registroRepContra, "Repita su contraseña");
-
     } else if (contraC==false){
         i=5;
         error(registroRepContra, "");
     } else if (contra2 != contra){
         i=5;
         error(registroRepContra, "Sus contraseñas no coinciden");
-        
     } else {
         i=5;
         correcto(registroRepContra, "");
         contra2C=true;    
     }
+
     if (nombreC=== true && apellidoC===true && usernameC===true && mailC===true && contraC=== true && contra2C===true){
         registrarse();
     }
@@ -267,7 +253,6 @@ function error (input, message) {
     wrong[i].classList.add("wrongT")
     right[i].classList.remove("rightT")
     inputCorrecto[i].classList.remove("inputCorrecto")
-
 }
 
 function correcto(input, message) {

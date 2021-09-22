@@ -10,7 +10,9 @@
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;;
 }
+
 /* Header */
+
 body {
     height: 100vh;
     background-image: url('Imágenes/fondo.jpg');
@@ -123,6 +125,7 @@ body {
 }
 
 /* Comienza el footer */
+
 footer {
     padding-left: 20px;
     margin: 30px 15px 0 15px;
@@ -132,6 +135,7 @@ footer {
     display: grid;
     grid-template-columns: auto auto auto;
 }
+
 footer h2 {
     font-size: 50px;
 }
@@ -245,7 +249,6 @@ footer li {
     transform: translate(-25px, 16px);
 }
 
-
 .menu-btn.open .menu-btn__burger {
     transform: translateX(-50px);
     background: transparent;
@@ -265,6 +268,7 @@ footer li {
     background: var(--gradiente);
     border-radius: 15px;
 }
+
  .menu-btn a {
     text-decoration: none;
     color: gray;
@@ -274,8 +278,9 @@ footer li {
     padding-left: 10px;
     padding-right: 10px;
 }
+
 #sinBorde {
-    border-bottom: 0px red;
+    border-bottom: 0px;
 }
 
 .menu-btn a:hover {
@@ -283,6 +288,7 @@ footer li {
     border-radius: 15px;
     transition: background-color .5s ease;
 }
+
 .menu-btn ul li {
     display: none;    
 }
@@ -298,8 +304,7 @@ footer li {
 }
 
 
-
-/* Ingrese */
+/* Comienza Ingrese */
 
 .ingrese-login-contenedor {
     height: 60vh;
@@ -307,7 +312,8 @@ footer li {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
+
 .ingrese-form {
     position: relative;
     width: 100%;
@@ -317,7 +323,8 @@ footer li {
     border-radius: 15px;
     color: grey;
     box-shadow: 0 15px 25px rgba(84, 3, 109, 0.62);
-  }
+}
+
  .ingrese-form::before {
     content:'';
     position: absolute;
@@ -365,6 +372,7 @@ footer li {
     pointer-events: none;
     transition: .3s ease-out;
 }
+
 .ingrese-form .ingrese-input-grupo input:valid + label,
 .ingrese-form .ingrese-input-grupo input:focus + label {
     transform: translateY(-18px);
@@ -426,9 +434,7 @@ footer li {
     margin-left: 100px;
 }
 
-
-/* Registro */
-
+/*Comienza Registro */
 
 #registro-main {    
     display: flex;
@@ -500,7 +506,6 @@ footer li {
     margin-top: 5px;
 }
 
-
 .animacion-registro{
     transform: translateY(-20px);
     color: #be1ebe;
@@ -523,17 +528,11 @@ footer li {
     margin-bottom: 30px;
 }
 
-
-
 #registro-container img {
     display: none;
 }
 
-#registro-container .small-error {
-    color: gray;
-}
-
-/* Error */
+/*Si introducimos valores erroneos: */
 
 #registro-container .inputError {
     color: var(--rojoRegistro);
@@ -543,28 +542,33 @@ footer li {
     display: inline;
 } 
 
+#registro-container .small-error {
+    color: gray;
+}
 
-/* Correcto */
+/*Si introducimos valores correctos: */
 
 #registro-container .inputCorrecto {
     color: var(--verdeRegistro);
     border-color: var(--verdeRegistro);
 }
+
 #registro-container .rightT {
     display: inline;
 }
 
 
-
-/* responnsive */
+/*Responsive */
 
 @media (min-width: 700px) and (max-width: 1000px) {
     #comienzaH {
         display: inline;
     }
+
     #inicio {
         display: none;
     }
+
     #header {
         display: grid;
         grid-template-columns: 1fr 5fr;
@@ -596,6 +600,7 @@ footer li {
     #headerYfooter {
         grid-template-rows: 480px 100px;
     }
+
     footer {
         height: 90px;
     }
@@ -615,9 +620,11 @@ footer li {
     #comienzaH {
         display: inline;
     }
+
     #inicio{
         display: none;
     }
+    
     #header {
         display: grid;
         grid-template-columns: 1fr 3fr;
