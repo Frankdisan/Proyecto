@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raíz de X</title>
+    <title>Agenda</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Imágenes/logopequeño.ico">
     <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
     <header id="header">
@@ -40,13 +41,26 @@
         </div>
     </header>
     <section id="headerYfooter">
-        <main id="inicio-main">
-            <h1> ¡Bienvenidos! </h1>
-            <div class= "cajas">
-                <div><a href="">Propuestas de examen</a></div>
-                <div><a href="">Temas</a></div>
-                <div><a href="agenda.html">Reserva tu clase</a></div>
-                <div><a href="">Calculadora</a></div>
+        <main id="main-agenda">
+            <div id="agenda">
+                <input class="input" type="text" placeholder="Nombre de usuario">
+                <select class="input">
+                    <option disabled selected>Nivel</option>
+                    <option>1er Año</option>
+                    <option>2do año</option>
+                    <option>3er año</option>
+                    <option>4to año</option>
+                    <option>5to año</option>
+                    <option>6to año</option>
+                </select>                
+                <input class="input" type="datetime-local" placeholder="Fecha y hora de su clase"> 
+                <select class="input">
+                    <option selected disabled>Medio</option>
+                    <option>Casa del profesor</option>
+                    <option>Casa del estudiante</option>
+                    <option>Virtual</option>
+                </select>
+                <input type="submit" value="Agendar">
             </div>
         </main>
         <footer>
@@ -66,5 +80,27 @@
             </section>
         </footer>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        config= {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            altInput: true,
+            altFormat: "F j, (h:i K)",
+            minTime: "8:00",
+            maxTime: "20:00",
+            "disable": [
+                function(date) {
+                    return (date.getDay() === 0 || date.getDay() === 6);
+                }
+            ],
+            "locale": {
+                "firstDayOfWeek": 1
+            },
+            minDate: new Date().fp_incr(1),
+            maxDate: new Date().fp_incr(31)
+        }
+        flatpickr("input[type=datetime-local]", config);
+    </script>
 </body>
 </html>
