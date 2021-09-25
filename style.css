@@ -563,8 +563,9 @@ footer li {
     display: grid;
     grid-template-columns: auto 80% auto;
     grid-template-areas: "algo agenda algoo";
-    height: 80%;
+    height: 100%;
 }
+
 #agenda{
     grid-area: agenda;
     background: var(--gradiente);
@@ -576,6 +577,66 @@ footer li {
 .input{ 
     margin-top: 25px;
     width: 200px;
+    border: 2px black solid;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+}
+
+#agenda-datos{
+    background: linear-gradient(to right, #c0392b, #8e44ad);
+    display: inline;
+    padding: 22px 10px 22px 10px;
+    border-radius: 10px;
+}
+
+#agenda-datos label{
+    position: absolute;
+}
+
+#agenda-boton{
+    border-radius: 5px;
+    border: 2px black solid;
+    width: 90px;
+    margin-left: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.input:focus{
+    outline: none;
+}
+
+#headerYfooter2 {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 135px;
+    height: 600px;
+}
+
+.ulPadre {
+    display: block;
+    margin: 0 10px 0 10px;
+    border-radius: 15px;
+}
+
+.ulPadre:first-of-type{
+    margin-top: 50px;
+}
+
+.ulPadre li{
+    display: inline-block;
+    width: 25%;
+    height: 35px;
+    background-color: silver;
+    text-align: left;
 }
 
 /*Responsive */

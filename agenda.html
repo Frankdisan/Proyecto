@@ -7,7 +7,7 @@
     <title>Agenda</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Imágenes/logopequeño.ico">
-    <script defer src="script.js"></script>
+    <script defer src="agenda.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
@@ -40,27 +40,33 @@
             </ul>
         </div>
     </header>
-    <section id="headerYfooter">
+    <section id="headerYfooter2">
         <main id="main-agenda">
             <div id="agenda">
-                <input class="input" type="text" placeholder="Nombre de usuario">
-                <select class="input">
-                    <option disabled selected>Nivel</option>
-                    <option>1er Año</option>
-                    <option>2do año</option>
-                    <option>3er año</option>
-                    <option>4to año</option>
-                    <option>5to año</option>
-                    <option>6to año</option>
-                </select>                
-                <input class="input" type="datetime-local" placeholder="Fecha y hora de su clase"> 
-                <select class="input">
-                    <option selected disabled>Medio</option>
-                    <option>Casa del profesor</option>
-                    <option>Casa del estudiante</option>
-                    <option>Virtual</option>
-                </select>
-                <input type="submit" value="Agendar">
+                <form id="agenda-datos"> 
+                    <label for="nombre">Nombre de usuario</label>
+                    <input class="input" type="text" name="nombre">
+                    <label for="nivel">Nivel</label>
+                    <select class="input" name="nivel">
+                        <option disabled selected></option>
+                        <option>1er Año</option>
+                        <option>2do año</option>
+                        <option>3er año</option>
+                        <option>4to año</option>
+                        <option>5to año</option>
+                        <option>6to año</option>
+                    </select>
+                    <label for="calen">Fecha y hora</label>
+                    <input class="input" type="datetime-local" name="calen"> 
+                    <label for="medio">Medio</label>
+                    <select class="input" name="medio">
+                        <option selected disabled></option>
+                        <option>Casa del profesor</option>
+                        <option>Casa del estudiante</option>
+                        <option>Virtual</option>
+                    </select>
+                    <button id="agenda-boton">Agendarse</button>
+                </form>
             </div>
         </main>
         <footer>
