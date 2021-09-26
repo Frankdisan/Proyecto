@@ -11,7 +11,7 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
-
+// Resultó que en este script se encuentra en su gran mayoría la página de registro
 // Animación para los inputs del registro
 
 let registroForm= document.getElementById("registro-form");
@@ -270,7 +270,8 @@ function checkInputs() {
     }
 }
 
-// Blur  (Traté de abreviar un poco el código aprovechando la función checkInputs, pero solamente lo logré escribiendo toda esa seccion de código nuevamente, lo mismo en el ítem de animación de los inputs, aún así, espero que te guste, fue la sección que más dediqué tiempo e investigué.)
+// Blur  (Traté de abreviar un poco el código aprovechando la función checkInputs, pero solamente lo logré escribiendo toda esa seccion de código nuevamente, lo mismo en el anterior ítem de animación de los inputs,
+// aún así, espero que te guste, fue la sección que más dediqué tiempo e investigué.)
 
 registroNombre.addEventListener('blur', e=>{
     e.preventDefault();

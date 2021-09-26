@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Imágenes/logopequeño.ico">
-    <script defer src="agenda.js"></script>
+    <script defer src="calculadora.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
     <header id="header">
@@ -40,35 +39,31 @@
             </ul>
         </div>
     </header>
-    <section id="headerYfooter2">
-        <main id="main-agenda">
-            <div id="agenda">
-                <form id="agenda-datos"> 
-                    <label for="nombre">Nombre</label>
-                    <input class="input" type="text" name="nombre">
-                    <label for="nivel">Nivel</label>
-                    <select class="input" name="nivel">
-                        <option disabled selected></option>
-                        <option>1er Año</option>
-                        <option>2do año</option>
-                        <option>3er año</option>
-                        <option>4to año</option>
-                        <option>5to año</option>
-                        <option>6to año</option>
-                    </select>
-                    <label for="calen">Fecha y hora</label>
-                    <input class="input" type="datetime-local" name="calen"> 
-                    <label for="medio">Medio</label>
-                    <select class="input" name="medio">
-                        <option selected disabled></option>
-                        <option>Casa del profesor</option>
-                        <option>Casa del estudiante</option>
-                        <option>Virtual</option>
-                    </select>
-                    <button id="agenda-boton">Agendarse</button>
-                </form>
+    <section id="headerYfooter">
+        <section id="calculadora">
+            <div class="pantalla">
+                <div data-operacion-previa class="operacion-previa"></div>
+                <div data-operacion-actual class="operacion-actual"></div>
             </div>
-        </main>
+            <button data-borrar-todo id="AC">AC</button>
+            <button data-borrar>DEL</button>
+            <button data-operacion>÷</button>
+            <button data-numero>7</button>
+            <button data-numero>8</button>
+            <button data-numero>9</button>
+            <button data-operacion>×</button>
+            <button data-numero>4</button>
+            <button data-numero>5</button>
+            <button data-numero>6</button>
+            <button data-operacion>+</button>
+            <button data-numero>1</button>
+            <button data-numero>2</button>
+            <button data-numero>3</button>
+            <button data-operacion>-</button>
+            <button id="cero" data-numero>0</button>
+            <button data-numero>.</button>
+            <button data-igual id="igual">=</button>
+        </section>
         <footer>
             <section id="contacto">
                 <h3>Contactame:</h3>
@@ -86,27 +81,5 @@
             </section>
         </footer>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-        config= {
-            enableTime: true,
-            dateFormat: "Y-m-d H:i",
-            altInput: true,
-            altFormat: "F j, (h:i K)",
-            minTime: "8:00",
-            maxTime: "20:00",
-            "disable": [
-                function(date) {
-                    return (date.getDay() === 0 || date.getDay() === 6);
-                }
-            ],
-            "locale": {
-                "firstDayOfWeek": 1
-            },
-            minDate: new Date().fp_incr(1),
-            maxDate: new Date().fp_incr(31)
-        }
-        flatpickr("input[type=datetime-local]", config);
-    </script>
 </body>
 </html>

@@ -576,7 +576,7 @@ footer li {
 
 .input{ 
     margin-top: 25px;
-    width: 200px;
+    width: 150px;
     border: 2px black solid;
     border-radius: 5px;
     background-color: transparent;
@@ -633,10 +633,101 @@ input:-webkit-autofill:active {
 
 .ulPadre li{
     display: inline-block;
-    width: 25%;
+    width: 20%;
     height: 35px;
     background-color: silver;
-    text-align: left;
+}
+
+.ulPadre li:first-child{
+    border-start-start-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.ulPadre li:last-child{
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+.cruz {
+    font-size: 25px;
+    line-height: .5;
+    cursor: pointer;
+}
+
+.ulPadre .liCruz{
+    width: 10%;
+    margin-top: 5px;
+}
+
+
+/* Comienza calculadora */
+
+#calculadora{
+    display: grid;
+    justify-content: center;
+    align-self: center;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(6, 70px);
+    margin-top: 50px;
+}
+
+#calculadora > button {
+    cursor: pointer;
+    outline: none;
+    background-color: #201c4e;
+    color: grey;
+    border: 1px solid grey;
+    font-size: 1.3rem;
+}
+
+#calculadora > button:hover {
+    background-color: #0a0448;    
+    color: rgb(163, 59, 163);
+    transition: all .5s;
+}
+
+#AC{
+    grid-column: span 2;
+}
+
+#igual{
+    grid-column: span 2;
+}
+
+.pantalla{
+    grid-column: 1/-1;
+    background-color: black;
+    color: grey;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.pantalla .operacion-previa {
+    color: rgba(241, 241, 241, 0.674);
+    font-size: 1.3rem;
+}
+
+.pantalla .operacion-actual {
+    color: gray;
+    font-size: 2rem;
+}
+
+.pantalla{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#cero {
+    border-bottom-left-radius: 10px;
+}
+
+#igual {
+    border-bottom-right-radius: 10px;
 }
 
 /*Responsive */
@@ -694,6 +785,20 @@ input:-webkit-autofill:active {
                                 "insta face twitter linke";
         justify-content: center;
         text-align: center;
+    }
+
+    .input{ 
+        width: 100px;
+    }
+    
+    .ulPadre li{
+        font-size: 10px;
+    }
+
+    .cruz {
+        font-size: 15px;
+        line-height: .5;
+        cursor: pointer;
     }
 }
 
@@ -755,5 +860,28 @@ input:-webkit-autofill:active {
         justify-content: center;
         text-align: center;        
         margin-bottom: 15px;
+    }
+
+    .input{ 
+        width: 50px;
+        font-size: 10px;
+    }
+
+    .ulPadre li {
+        font-size: 10px;
+    }
+
+    #agenda-datos label {
+        font-size: 12px;
+    }
+
+    .ulPadre li{
+        font-size: 8px;
+    }
+
+    .cruz {
+        font-size: 10px;
+        line-height: .5;
+        cursor: pointer;
     }
 }

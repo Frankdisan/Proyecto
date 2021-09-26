@@ -10,14 +10,17 @@ menuBtn.addEventListener('click', () => {
         menuOpen = false;
     }
 });
-// Menú hamburguesa
 
-// La idea a lo mejor no es tan acertada, pienso que en una página normal, en un sitio de reserva no te preguntaría el username porque ya estaría guardado. También hay un par de cosas que quise agregar pero no
-// pude por motivo de tiempo, primero que las clases se agenden por orden de fecha, después agregar un botón de borrar clase, pagar y que no se puedan agendar mas de x clases.
-let inputs= document.getElementsByClassName("input")
-let agendaBoton= document.getElementById("agenda-boton")
+
+// Agenda
+// Todavía no estoy conforme del todo con esta págin, tiene un par de detalles más técnicos, como que al agendar una clase no te deje agendar otra hasta la siguiente hora (o sea, si agendo una clase a las 10:00, no pueda 
+// agendar otra a las 10:05), que se queden ordenadas según la fecha, y luego el tema de los pagos, que haya descuentos, etc. Todas estas cosas no tengo tiempo de agregarlas en esta entrega, pero las corregiré para la segunda.
+
+
+let inputs= document.getElementsByClassName("input");
+let agendaBoton= document.getElementById("agenda-boton");
 agendaBoton.addEventListener("click", e=>{
-    e.preventDefault()  
+    e.preventDefault();  
     if(inputs[0].value !="" && inputs[1].value !="" &&inputs[2].value !="" &&inputs[3].value !="") {
         crearCajita();
         for (let i = 0; i < inputs.length; i++) {
@@ -26,7 +29,7 @@ agendaBoton.addEventListener("click", e=>{
     }
 });
 
-const agenda= document.getElementById("agenda")
+const agenda= document.getElementById("agenda");
 
 function crearCajita(){
     const ulagenda= document.createElement("ul");
@@ -34,6 +37,8 @@ function crearCajita(){
     const liHijo1= document.createElement("li");
     const liHijo2= document.createElement("li");
     const liHijo3= document.createElement("li");
+    const liHijo4= document.createElement("li");
+    const cruz= document.createElement("a");
     agenda.appendChild(ulagenda);
     
     ulagenda.classList.add("ulPadre");
@@ -41,16 +46,32 @@ function crearCajita(){
     liHijo1.classList.add("agendaLista");
     liHijo2.classList.add("agendaLista");
     liHijo3.classList.add("agendaLista");
+    liHijo4.classList.add("agendaLista", "liCruz");
 
 
     ulagenda.appendChild(liHijo);
     ulagenda.appendChild(liHijo1);
     ulagenda.appendChild(liHijo2);
     ulagenda.appendChild(liHijo3);
+    ulagenda.appendChild(liHijo4);
+
 
     liHijo.innerText=inputs[0].value
     liHijo1.innerText=inputs[1].value
     liHijo2.innerText=inputs[3].value
     liHijo3.innerText=inputs[4].value
+    
+    liHijo4.appendChild(cruz)
+    cruz.innerHTML= "&times;"
+    cruz.classList.add("cruz");   
 
-}
+
+    cruz.addEventListener("click", e=>{
+        ulagenda.removeChild(liHijo);
+        ulagenda.removeChild(liHijo1);
+        ulagenda.removeChild(liHijo2);
+        ulagenda.removeChild(liHijo3);
+        ulagenda.removeChild(liHijo4);
+
+    });
+};
