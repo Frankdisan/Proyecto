@@ -373,13 +373,6 @@ footer li {
     transition: .3s ease-out;
 }
 
-.ingrese-form .ingrese-input-grupo input:valid + label,
-.ingrese-form .ingrese-input-grupo input:focus + label {
-    transform: translateY(-18px);
-    color: #ff652f;
-    font-size: .8rem;
-}
-
 .ingrese-submit-btn {
     display: inline;
     border: none;

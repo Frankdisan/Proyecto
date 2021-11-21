@@ -11,7 +11,6 @@ menuBtn.addEventListener('click', () => {
     }
 });
 
-// Resultó que en este script se encuentra en su gran mayoría la página de registro
 // Animación para los inputs del registro
 
 let registroForm= document.getElementById("registro-form");
@@ -459,3 +458,49 @@ function correcto(input, message) {
 function registrarse() {
      registroForm.submit()
 };
+
+
+const botonRegistrarse= document.getElementById("registrarseBoton");
+
+botonRegistrarse.addEventListener('click', () =>{
+    const name= registroNombre.value;    
+    const surname= registroApellido.value;
+    const username= registroUsername.value;
+    const mail= registroEmail.value;
+    const password= registroContra.value;
+
+    if (username && password && name && surname && mail) {
+      const objetoBody = {
+        name: name,
+        surname: surname,
+        username: username,
+        mail: mail,
+        password: password
+      };
+
+      console.log(objetoBody)
+
+    fetch("http://localhost:4000/auth/registro", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(objetoBody),
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (response) {
+
+        if (!response.error) {            
+            window.location.replace("ingrese.html");
+            localStorage.setItem("token", response.token);
+            alert("registro exitoso")
+        } else {
+          console.log("Login fallido");
+        } 
+      });
+     } else {
+    console.log("Falta completar campos");
+  }
+});

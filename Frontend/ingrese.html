@@ -40,18 +40,18 @@
         </div>
     </header>
     <div class="ingrese-login-contenedor">
-        <form action="" class="ingrese-form">
+        <form id="ingreseForm" class="ingrese-form">
             <h2>Ingrese</h2>
             <div class="ingrese-input-grupo">
-                <input type="text" name="loginUser" autocomplete="off" required>
-                <label for="loginUser">Nombre de usuario</label>
+                <input id="ingreseUsername" type="text" name="loginUser" autocomplete="off">
+                <label id="loginLUsername" for="loginUser">Nombre de usuario</label>
             </div>
             <div class="ingrese-input-grupo">
-                <input type="password" name="loginPassword" required>
-                <label for="loginPassword">Contraseña</label>
+                <input id="ingresePassword" type="password" name="loginPassword">
+                <label id="loginLPassword" for="loginPassword">Contraseña</label>
             </div>
             <a id="olvido" href="#olvido-contraseña">¿Olvidó su contraseña?</a>
-            <input type="submit" value="Ingresar" class="ingrese-submit-btn">
+            <button id="ingreseBoton" class="ingrese-submit-btn">Ingresar</button>
         </form>
         <div id="olvido-contraseña">
             <form action="" class="ingrese-form">
@@ -81,5 +81,7 @@
             <a id="linke" class="misredesA" href="https://linkedin.com" target="_Blank"><img src="Imágenes/linkedin.png" alt="linkedin" title="linkedin"></a>
         </section>
   </footer>
+
+  <script src="./login.js"></script>
 </body>
 </html>
