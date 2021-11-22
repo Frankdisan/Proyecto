@@ -15,7 +15,7 @@
 
 body {
     height: 100vh;
-    background-image: url('Imágenes/fondo.jpg');
+    background-image: url('../Imágenes/fondo.jpg');
 }
 
 #logo {
@@ -90,7 +90,7 @@ body {
     height: 65%;
     background-color: white;
     grid-gap: 20px;
-    background-image: url(Imágenes/fondo.jpg);
+    background-image: url(../Imágenes/fondo.jpg);
 }
 
 .cajas div {
@@ -110,7 +110,7 @@ body {
     padding-top: 120px;
     font-size: 40px;
     color: white;
-    background-image: url(Imágenes/estrellas.jpg);
+    background-image: url(../Imágenes/estrellas.jpg);
 }
 
 .cajas div:hover {
