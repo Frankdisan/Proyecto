@@ -1,0 +1,125 @@
+#registro-main {    
+    display: flex;
+    align-content: center;
+    justify-content: center;    
+    height: 60vh;    
+    margin-bottom: 3em;
+
+}
+
+#registro-container{
+    background: var(--gradiente);
+    color: gray;
+    border-radius: 15px;
+    width: 30em;
+    box-shadow: 0 15px 25px rgba(84, 3, 109, 0.62);
+    position: absolute;
+}
+
+#registro-container img{
+    border-radius: 50%;
+    height: 15px;
+    position: absolute;
+    margin: 5px -24px;
+    display: inline-block;
+    margin-left: 13em;
+}
+
+#registro-container h2{
+    margin-top: 15px;
+    margin-left: 130px;
+    font-size: 35px;
+}
+
+#registro-container small{
+    margin-left: 15em;
+    font-size: 15px;
+    color:transparent;
+    cursor:default;
+    user-select: none;
+    display: inline-block;
+}
+
+#registro-container form{
+    margin-left: 55px;
+}
+
+#registro-container div {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#registro-container label{
+    display: inline-block;
+    transition: .3s ease-out;
+    pointer-events: none;
+    position: absolute;
+    margin-right: 200px;
+}
+
+#registro-container input{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    width: 200px;
+    outline: none;
+    color: grey;
+    margin-top: 5px;
+}
+
+.animacion-registro{
+    transform: translateY(-20px);
+    color: #be1ebe;
+    font-size: .8rem;
+}
+
+#registro-container button {
+    display: block;
+    border: none;
+    outline: none;
+    background: #ff652f;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+#registro-container img {
+    display: none;
+}
+
+/*Si introducimos valores erroneos: */
+
+#registro-container .inputError {
+    color: var(--rojoRegistro);
+    border-color: var(--rojoRegistro);
+}
+#registro-container .wrongT{
+    display: inline;
+} 
+
+#registro-container .small-error {
+    color: gray;
+}
+
+/*Si introducimos valores correctos: */
+
+#registro-container .inputCorrecto {
+    color: var(--verdeRegistro);
+    border-color: var(--verdeRegistro);
+}
+
+#registro-container .rightT {
+    display: inline;
+}
+
+
+.hola {
+    background-color: #fff;
+}

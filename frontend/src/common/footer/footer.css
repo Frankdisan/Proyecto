@@ -1,0 +1,83 @@
+:root {
+    --gradiente: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    --rojoRegistro: #D11514;
+    --verdeRegistro: #15BD12;
+}
+
+
+footer {
+    padding-left: 20px;
+    margin: 30px 15px 0 15px;
+    background: var(--gradiente);
+    border-radius: 15px;
+    color:grey;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer h3 {
+    margin: 0;
+}
+
+footer li {
+    list-style: none;
+    font-size: 20px;
+}
+
+#contacto b {
+    margin-left: 30px;
+    font-weight: 100;
+}
+
+#logodewpp {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    height: 25px;
+    margin-top: 3px;
+}
+
+#misredes {
+    display: grid;
+    grid-template-columns: 30px 50px;
+    grid-template-rows: 35px 30px 25px;
+    grid-template-areas:    "titulo titulo"
+                            "insta face"
+                            "twitter linke";
+    justify-content: center;
+}
+
+#misredes h3 {
+    grid-area: titulo;
+}
+
+#face {
+    grid-area: face;
+}
+
+#insta {
+    grid-area: insta;
+}
+
+#twitter {
+    grid-area: twitter;
+}
+
+#linke {
+    grid-area: linke;
+}
+
+#misredes img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition-duration: .4s;
+}
+
+#misredes img:hover {
+    transform: scale(1.6);
+} 

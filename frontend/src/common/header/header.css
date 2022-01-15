@@ -1,0 +1,53 @@
+:root {
+    --gradiente: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    --rojoRegistro: #D11514;
+    --verdeRegistro: #15BD12;
+}
+
+#logo {
+    width: 100%;
+    border-radius: 15px;
+}
+
+header Link {
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 84%;
+}
+
+#header {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+#inicio {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    margin-left: 30px;
+    background: var(--gradiente);
+    border-radius: 15px;
+    margin-right: 20px;
+    padding: 6.5px 15px 5px 15px;
+    height: 60px;
+
+}
+
+#inicio a {
+    text-decoration: none;
+    color:grey;
+    padding: 2px;
+}
+#inicio li {
+    transition: transform;
+    transition-duration: 1s;
+}
+
+#inicio li:hover {
+    background: var(--gradiente);
+    border-radius: 15px;
+    transform: scale(1.05);
+}
