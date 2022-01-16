@@ -1,0 +1,120 @@
+.ingrese-login-contenedor {
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingrese-form {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    padding: 80px 40px 40px;
+    background: var(--gradiente);
+    border-radius: 15px;
+    color: grey;
+    box-shadow: 0 15px 25px rgba(84, 3, 109, 0.62);
+}
+
+ .ingrese-form::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(152, 9, 196, 0.08);
+    transform: skewX(-27deg);
+    transform-origin: bottom left;
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.ingrese-form h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: #9594a0;
+}
+
+.ingrese-form .ingrese-input-grupo {
+    position: relative;
+}
+
+.ingrese-form .ingrese-input-grupo input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.ingrese-form .ingrese-input-grupo label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease-out;
+}
+
+.ingrese-submit-btn {
+    display: inline;
+    border: none;
+    outline: none;
+    background: #ff652f;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+#olvido{
+    color: inherit;
+    text-decoration: none;
+}
+
+#olvido-contraseña {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -40%;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 10;
+    background-color: #fff;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+#olvido-contraseña:target {
+    height: 100%;
+    opacity: 1;
+    top:0;
+}
+
+#close {
+    position: absolute;
+    right: 1.5rem;
+    top: 0.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: inherit;
+}
+
+#submitEspecial{
+    margin-left: 100px;
+}
